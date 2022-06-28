@@ -1,0 +1,30 @@
+ALGORITHM Insertion_Sort
+VAR
+i,n: integer;
+arr: array_of INTEGER [500]
+BEGIN
+insertion_sort(arr)
+END
+
+PROCEDURE swap(VAR xp, VAR yp : INTEGER)
+VAR
+   tmp : INTEGER;
+BEGIN
+  tmp := xp;
+  xp := yp;
+  yp := tmp;
+END
+
+PROCEDURE insertion_sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+   i,j,n : INTEGER;
+BEGIN
+   n := arr.length;
+   FOR i FROM 0 TO n- 1 STEP 1  DO
+       FOR j  FROM 0 TO n-i-1 STEP 1  DO
+           IF (arr[j] > arr[j+1]) THEN
+               swap(arr[j], arr[j+1])
+           END_IF
+       END_FOR
+   END_FOR
+END
